@@ -1,0 +1,19 @@
+# This allows us to specify a list of files that are going to be excluded from the Docker context. So when you run the doc image, it uses something called the Docker context, which is the dicrectory that are going to be excluded from the Docker context.
+
+
+# Git 
+.git
+.gitignore
+
+# Docker
+.docker
+
+# Python
+app/__pycache__/
+app/*__pycache__/
+app/*/*/__pycache__/
+app/*/*/*__pycache__/
+.env/
+# To dont add virtual env..
+.venv/
+venv/
