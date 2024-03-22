@@ -1,0 +1,22 @@
+# The veersion of docker-compose syntax that we gonna be using
+version: "3.9"
+
+# The main block of docker-compose file, and docker-compose typically consist of one or more service
+services:
+  # app, is a name of our service that gonna run in our dockerfile
+  app:
+    build:
+      context: .
+      args:
+        - DEV=true
+    # Mapping, port 8000 in our local machin to port 8000 in our local container, this how we can get access to the network when we wanna connect to our serveur
+    ports:
+      - "8000:8000"
+
+    # Volumes, is away of mapping dirictro from our system into the docker container
+    volumes:
+      - "./app:/app"
+
+    # The command that use to run the service
+    command: >
+      ssh -c "python manage.py runserver 0.0.0.0:8000"
