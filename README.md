@@ -30,3 +30,36 @@ hello word
 # Create Django project
 
 - docker-compose run --rm app sh -c "django-admin startproject app ."
+- docker-compose up
+
+# GitHub Actions
+
+- Automation tool
+- Similar to Travis-CI, Gitlab CI/CD, Jenkins
+- Run jobs when code changes
+- Automate tasks
+
+## Common uses of gitHub Actions
+
+- Deployment
+- Code linting
+- Unit tests
+
+## gitHub Actions pricing
+
+- Charged per minutes
+- 2000 free minutes
+- Various plans available, to by more minutes
+
+# Docker Hub
+
+- Needed to pull base images
+- Rates limits
+  - Anonymous: 100/6h
+  - Authenticated: 200/6h
+- GitHub Actions uses shared IP addresses
+  - Limit applied to all users
+- Authenticated with Docker Hub
+  - 200 pulls per 6h all to ourselves!
+  - More than enough for most projects
+- Additional plans available

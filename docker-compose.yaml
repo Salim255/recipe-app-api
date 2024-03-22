@@ -19,4 +19,4 @@ services:
 
     # The command that use to run the service
     command: >
-      ssh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py runserver 0.0.0.0:8000"
