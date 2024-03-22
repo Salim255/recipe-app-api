@@ -16,7 +16,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
+      ###
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test" # To run unit test
       - name: Lint
