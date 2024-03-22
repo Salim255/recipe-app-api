@@ -13,3 +13,16 @@ hello word
 - ## app, the name of the server or the app that to run within docker compose
 - # sh -c, it's a shell command , passed ito the running container, to tell that we want to run a single command in our container
 - # "python manage.py collectstatic" it's a django command for collecting static files
+
+# How we'll handling Linting
+
+- install flake8 package
+- run it through Docker Compose
+- docker-compose run --rm app sh -c "flake8"
+
+# Testing
+
+- Django test suite
+- Setup tests per Django app
+- Run tests through Docker Compose
+- docker-compose run --rm app sh -c "python manage.py test"

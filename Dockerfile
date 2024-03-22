@@ -6,12 +6,14 @@ LABEL maintainer="hassan Salim"
 ENV PYTHONUNBOUFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
+COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 
 WORKDIR /app
 
 EXPOSE 8000
 
+ARG DEV=false
 # To install some dependancy in my machine (python image)
 # 1) python -m -venv /py: Create new virtual envronnment  that we gonna to store our depondencies, just to avoid any conflection dependencies that may come in the base image that i am using
 #2 ) /py/bin/pip install --upgrade pip, we specify the full path for our virtual environnment, so we wanna upgrade pipe, for the virtual environnement that we just created , so will upgrade the python package manager inside our environnment 
@@ -22,6 +24,9 @@ EXPOSE 8000
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
+    if [ $DEV = "true" ]; \
+        then /py/bin/pip install -r /tmp/requirements.dev.txt ;\
+    fi && \
     rm -rf /tmp && \
     adduser \
         --disabled-password \
