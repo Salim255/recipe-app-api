@@ -136,3 +136,24 @@ hello word
   - ### Use unittest.mock (comes with build in python) with tools :
     - #### MagicMock / Mock -> ### Replace real objects
     - #### patch -> ### Overrides code for tests
+
+# Testing Web Request with Django and Django REST Framework
+
+## Testing APIs
+
+- ### Make actual requests
+- ### Check result
+
+## Django REST Framework give APIClient
+
+- ### Based on top of the Django's TestClient
+- ### Make requests
+- ### Check result
+- ### Override authentication
+
+## Using the APIClient:
+
+- ### Import APIClient
+- ### Create client
+- ### Make request
+- ### Check result
