@@ -169,3 +169,33 @@ hello word
 - ## ImportError when running tests
 - ## Possible reason for ImportError
   - ### Both tests/ directory and tests.py in your app
+
+# Database
+
+- ## PostgreSQL
+
+  - ### Popular open source DB
+  - ## Integrate well with Django
+
+- ## Docker Compose
+
+  - ### Defined with project(re-usable)
+  - ### Persistent data using volumes
+  - ### Handles network configuration
+  - ### Environment variable configuration
+
+- ## Architecture
+
+- ### Database (PostgreSQL)
+- ### App (Django)
+
+- ## Network connectivity
+
+- ### Set depends_on on app service to start db first
+- ### Docker Compose create a network
+- ### The app service can use db hostname
+
+- ## Volumes
+- ### Persistent data
+- ### Maps directory in container to local machine
+- ###
