@@ -199,3 +199,67 @@ hello word
 - ## Volumes
   - ### Persistent data
   - ### Maps directory in container to local machine
+
+# Database configuration with Django
+
+## Steps for configuring database
+
+- ### Configure Django
+
+- Tell Django how to connect
+
+- ### Install database adaptor dependencies
+
+- Install the tool Django uses to connect
+
+- ### Update Python requirements
+
+## Django needs to know ...
+
+- ### Engine (type of database, in my case postgres engine)
+- ### Hostname (IP or domaine name for database)
+- ### Port number (it's usually the default number for postgres, which is 5432)
+- ### Database Name
+- ### Username
+- ### Password
+- ### This settings are defined in settings.py file
+
+## Environment variables
+
+- ### Pull config values from environment variables
+- ### Easily passed to Docker
+- ### Used in local dev or prod
+- ### Single place to configure project
+- ### Easy to do in python
+
+# Pyscopg2 (Database adaptor)
+
+## The Pyscopg2, is the package that we need in order for Django to connect to our database
+
+- ### Most popular PostgresSQL adaptor for Python
+- ### Supported by Django
+
+## Psycopg2 Installation Options
+
+- ### 1) psycopg2-binary
+  - Ok for development
+  - Not good for production (performance problem)
+- ### 2) psycopg2
+
+  - Compiles from source code
+  - Required additional dependencies
+  - Easy to install with docker
+
+- ### Installing Psycopg2
+  - #### List of package dependencies in docs
+    - C Complier
+    - python3-dev
+    - libpq-dev
+  - ### Equivalent packages for Alpine
+    - postgresql-client
+    - build-base
+    - postgresql-dev
+    - must-dev
+  - ### Found by searching and trial and error
+  - ### Docker best practice
+    - Clean up build dependencies
