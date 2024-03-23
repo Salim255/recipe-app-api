@@ -30,3 +30,79 @@ hello word
 # Create Django project
 
 - docker-compose run --rm app sh -c "django-admin startproject app ."
+- docker-compose up
+
+# GitHub Actions
+
+- Automation tool
+- Similar to Travis-CI, Gitlab CI/CD, Jenkins
+- Run jobs when code changes
+- Automate tasks
+
+## Common uses of gitHub Actions
+
+- Deployment
+- Code linting
+- Unit tests
+
+## gitHub Actions pricing
+
+- Charged per minutes
+- 2000 free minutes
+- Various plans available, to by more minutes
+
+# Docker Hub
+
+- Needed to pull base images
+- Rates limits
+  - Anonymous: 100/6h
+  - Authenticated: 200/6h
+- GitHub Actions uses shared IP addresses
+  - Limit applied to all users
+- Authenticated with Docker Hub
+  - 200 pulls per 6h all to ourselves!
+  - More than enough for most projects
+- Additional plans available
+
+# Django test framework
+
+- ## Django test framework its build on the top of unit test library
+- ## Django adds features
+- ### Test client - dummy web browser
+- ### Simulate authentication
+- ### Temporary database
+- ## Django REST Framework adds features
+- ### API test client
+
+- ## where do you put tests ?
+- ### Placeholder test.py added to each app
+- ### Or create tests/ subdirectory to split tests up
+- ### keep in mind:
+- #### Only use tests.py or tests/ directory (not both)
+- #### Test modules must start with test
+- #### Test directory must contain _init_.py
+
+- ## Test Database
+- ### Test code that uses the DB
+- ### Specific database for test, happens for every test (by default)
+
+- ## Test classes (or types)
+- ### SimpleTestCase
+- #### No database integration
+- #### Useful if no database is required for your test
+- #### This , can save you executing tests
+
+- ### TestCase (mostly used)
+- #### Database integration
+- #### Useful for testing code that uses the database
+
+- ### Writing tests
+- #### Import test class
+- ##### SimpleTestCase - Non Database
+- ##### TestCase - Database
+- #### Import Object to test
+- #### Define test class
+- #### Add test method
+- #### Setup inputs
+- #### Execute code to be tested
+- #### Check output

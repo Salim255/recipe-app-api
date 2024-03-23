@@ -1,0 +1,23 @@
+---
+name: Checks
+
+on: [push]
+
+jobs:
+  test-lint:
+    name: Test and Lint
+    runs-on: ubuntu-20.04 # The runner that we gonna run our job on
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2 #Action that provided by GitHub to check our code out inside our gitHub action job
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      ###
+      - name: Test
+        run: docker-compose run --rm app sh -c "python manage.py test" # To run unit test
+      - name: Lint
+        run: docker-compose run --rm app sh -c "flake8"
