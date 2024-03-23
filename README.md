@@ -108,3 +108,31 @@ hello word
 - #### Check output
 
 # TDD
+
+# Mocking
+
+- ## Whats Mocking ?
+
+  - ### Override or change behavior of dependencies
+  - ### Avoid unintended side effects
+  - ### Isolate code being tested
+
+- ## Why use mocking ?
+
+  - ### Avoid relying on external services
+
+    - #### Can't guarantee they will be available
+    - #### Makes tests unpredictable and inconsistent
+
+  - ### Avoid unintended consequences
+
+    - #### Accidentally sending emails
+    - #### Overloading external services
+
+  - ### Another benefit
+    - #### Speed up tests
+
+- ## How to mock code ?
+  - ### Use unittest.mock (comes with build in python) with tools :
+    - #### MagicMock / Mock -> ### Replace real objects
+    - #### patch -> ### Overrides code for tests
