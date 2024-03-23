@@ -174,7 +174,8 @@ hello word
 
 - ## PostgreSQL
 
-  - ### Popular open source DB
+- ### Popular open source DB
+
   - ## Integrate well with Django
 
 - ## Docker Compose
@@ -191,11 +192,10 @@ hello word
 
 - ## Network connectivity
 
-- ### Set depends_on on app service to start db first
-- ### Docker Compose create a network
-- ### The app service can use db hostname
+  - ### Set depends_on on app service to start db first
+  - ### Docker Compose create a network
+  - ### The app service can use db hostname
 
 - ## Volumes
-- ### Persistent data
-- ### Maps directory in container to local machine
-- ###
+  - ### Persistent data
+  - ### Maps directory in container to local machine
