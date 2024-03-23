@@ -157,3 +157,15 @@ hello word
 - ### Create client
 - ### Make request
 - ### Check result
+
+# Common testing problems with Django and Django REST Framework
+
+- ## Test not running
+- ## Run less tests than you defined
+- ## Possible reasons for tests not running:
+  - ### Missing **init**.py in tests/dir
+  - ### Or, Indentation of test cases
+  - ### Or, Missing test prefix for method
+- ## ImportError when running tests
+- ## Possible reason for ImportError
+  - ### Both tests/ directory and tests.py in your app
