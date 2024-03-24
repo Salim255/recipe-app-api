@@ -281,3 +281,7 @@ hello word
 - ## When is this issue ?
   - ### When running docker-compose locally
   - ### When running docker-compose on deployed environment
+
+# Create core app
+
+    - docker-compose run --rm app sh -c "python manage.py startapp core"
