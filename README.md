@@ -226,18 +226,18 @@ hello word
 
 ## Environment variables
 
-- ### Pull config values from environment variables
-- ### Easily passed to Docker
-- ### Used in local dev or prod
-- ### Single place to configure project
-- ### Easy to do in python
+- Pull config values from environment variables
+- Easily passed to Docker
+- Used in local dev or prod
+- Single place to configure project
+- Easy to do in python
 
 # Pyscopg2 (Database adaptor)
 
 ## The Pyscopg2, is the package that we need in order for Django to connect to our database
 
-- ### Most popular PostgresSQL adaptor for Python
-- ### Supported by Django
+- Most popular PostgresSQL adaptor for Python
+- Supported by Django
 
 ## Psycopg2 Installation Options
 
@@ -279,8 +279,8 @@ hello word
   - ### Create custom Django management command
 
 - ## When is this issue ?
-  - ### When running docker-compose locally
-  - ### When running docker-compose on deployed environment
+  - When running docker-compose locally
+  - When running docker-compose on deployed environment
 
 # Create core app
 
