@@ -18,6 +18,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       ###
       - name: Test
-        run: docker-compose run --rm app sh -c "python manage.py test" # To run unit test
+        run: docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py test" # To run unit test
       - name: Lint
         run: docker-compose run --rm app sh -c "flake8"
