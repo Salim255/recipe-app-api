@@ -285,3 +285,41 @@ hello word
 # Create core app
 
     - docker-compose run --rm app sh -c "python manage.py startapp core"
+
+# Database migrations
+
+## Django ORM
+
+- ### Object Relational Mapper (ORM)
+- ### Serve as abstraction layer for database
+  - Means Django handles database structure and changes
+  - Allows focus on Python code
+  - Allows to use any database (within reason)
+
+## Using the ORM
+
+- Define models
+- Generate migrations files
+- Setup database
+- Store data
+
+### Models
+
+- Each model maps to a table
+- Models contain
+  - Name
+  - Fields
+  - Other metadata
+  - Custom Python logic
+
+### Creating migrations
+
+- Ensure app is enable in settings.py
+- Use Django CLI
+  - python manage.py makemigrations
+
+### Applying migrations
+
+- Use Django CLI
+  - python manage.py migrate
+- It best to run it after waiting for database
