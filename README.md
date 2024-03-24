@@ -263,3 +263,21 @@ hello word
   - ### Found by searching and trial and error
   - ### Docker best practice
     - Clean up build dependencies
+
+# Fixing database race condition
+
+- ## Problem with Docker compose
+
+  - ### Using depends_on ensure service starts
+    - Doesn't enure that application is running (it's just makes sure the service is on but it doesn't makes sure the application is on)
+
+- ## Solution
+
+  - ### Make Django "wait for db"
+    - It works by checking for database availability
+    - Continue execution when the database is ready
+  - ### Create custom Django management command
+
+- ## When is this issue ?
+  - ### When running docker-compose locally
+  - ### When running docker-compose on deployed environment
