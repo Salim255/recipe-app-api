@@ -6,11 +6,10 @@ from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
-    PermissionsMixin
+    PermissionsMixin,
 )
 
 # We define the user manager baser on the base user manger class provided by Django
-
 class UserManager(BaseUserManager):
     """Manager for users."""
 
@@ -21,12 +20,12 @@ class UserManager(BaseUserManager):
     # this useful when we define additional fields, for example, a name,
     # you can pass it as an extra field and that will be automatically
     # created when the user model is created
-    def create_user(self, email, password=None, **extra_field):
+    def create_user(self, email, password=None, **extra_fields):
         """Create, save and return a new user."""
 
         # self.model because our manager is associated to a model,
         # we need a way of being able to access the model that we're associated with
-        user = self.model(email=email, **extra_field)
+        user = self.model(email=email, **extra_fields)
 
         # set.password method on our object, and this will set the encrypted password
         # so it will take the password that's provided in the create user method
@@ -38,6 +37,8 @@ class UserManager(BaseUserManager):
         # It's best practice to pass in self._db, whenever you are creating
         # or saving a new object using a user manager
         user.save(using=self._db)
+
+        return user
 
 # AbstractBaseUser contains the functionality for the
 # authentication system but not any field
@@ -51,7 +52,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255 , unique=True)
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
-    is_staff = models.BigAutoField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     # This just to assign this user manager to our custom user class
     # And we do that by typing objects=UserManager()
@@ -60,5 +61,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # username defines the field that we want to use for authentication,
     # and this how we replace the username that comes with default user model
-    USERNAME_FILED = 'email'
+    USERNAME_FIELD = 'email'
+
 

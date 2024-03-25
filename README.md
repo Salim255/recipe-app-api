@@ -324,6 +324,51 @@ hello word
   - python manage.py migrate
 - It best to run it after waiting for database
 
+# Django authentication
+
+- Django comes with built in authentication system
+- Give us a Framework for basic features
+  - Registration
+  - Login
+  - Auth
+- Integration with Django admin
+
+# Django use model
+
+- Foundation of the Django auth system
+- Comes with default user model
+  - Username instead of email
+  - Not easy to customize
+- Create a custom model for new projects
+  - The main different between our user model and default one, allows for using email instead of username
+  - Also enable us future proof project for later changes to user model
+
+# How to customize user model
+
+- Create model
+  - Base from AbstractBaseUser and PermissionsMixin
+- Create custom manager
+  - Used for Django CLI integration
+- Set AUTH_USER_MODEL in settings.py
+- Create and run migrations
+
+## AbstractBaseUser
+
+- Provides features for authentication
+- Doesn't includes fields
+
+## PermissionsMixin
+
+- Support for Django permission system
+- Includes fields and methods
+
+# Common issues when customize Django user model
+
+- Running migrations before setting custom model
+  - Set custom model first
+- Typos in config
+- Indentation in manager or model
+
 # Design custom user model
 
 ## User fields
