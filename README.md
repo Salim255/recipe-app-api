@@ -323,3 +323,28 @@ hello word
 - Use Django CLI
   - python manage.py migrate
 - It best to run it after waiting for database
+
+# Design custom user model
+
+## User fields
+
+- email (EmailField)
+- name (CharField)
+- is_active (BooleanField)
+- is_staff (BooleanField)
+
+## User model manager
+
+- Used to manage objects
+- Custom logic for creating objects
+  - Hashing password
+- Used by Django CLI
+
+## Based UserManager
+
+- Based class for managing users
+- Useful helper methods
+  - normalize_email: for storing emails consistently
+- Methods we'll define
+  - create_user: called when creating user
+  - create_superuser: used by the Django CLI to create superuser (admin)
